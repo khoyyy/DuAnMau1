@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     void onMove (InputValue value)  
     {
         moveInput  = value.Get<Vector2>();
+        Debug.Log(message: "......... Move Input:" + moveInput);
+       
     }
     // chuyển động của nhân vật 
     void Run()
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2(x: Mathf.Sign(_rigidbody2D.velocity.x), y: 1f);
+            transform.localScale = new Vector2(x:Mathf.Sign(_rigidbody2D.velocity.x), y:1f);
         }
     }
     
