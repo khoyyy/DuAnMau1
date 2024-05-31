@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Run();
+        FlipSprite();
     }
     void onMove (InputValue value)  
     {
@@ -25,7 +26,21 @@ public class Player : MonoBehaviour
     // chuyển động của nhân vật 
     void Run()
     {
-        Vector2 moveVelocity = new Vector2(moveInput.x * moveSpeed, _rigidbody2D.velocity.y);
-        _rigidbody2D.velocity = new Vector2(moveInput.x, y:0f);
+        var moveVelocity = new Vector2(moveInput.x * moveSpeed, _rigidbody2D.velocity.y);
+        _rigidbody2D.velocity = moveVelocity;
     }
+
+    // abs: giá trị tuyệt đối 
+    // sign : đấu của giá trị
+    // epsilon: giá trị nhỏ nhất có thể so sánh
+    // xoay hướng nhân vật theo chiều chuyển động 
+    void FlipSprite()
+    {
+        bool playerHasHorizontalSpeed = Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(x: Mathf.Sign(_rigidbody2D.velocity.x), y: 1f);
+        }
+    }
+    
 }
