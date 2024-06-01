@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         }
         if (rb.velocity.y == 0)
         {
-            animator.SetBool("2Jump", false);
+            animaadadadtor.SetBool("2Jump", false);
             animator.SetBool("falling", false);
 
         }
