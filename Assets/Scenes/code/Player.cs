@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     public Transform _canjump;
-    public LayerMask nen;
+    public LayerMask Dat;
     private bool canjump;
     //private bool doublejump;
     private bool _flip;
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     }
     private void Move()
     {
-        canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, nen);
+        canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, Dat);
         var Move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(Move * movespeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && canjump)
@@ -68,17 +68,17 @@ public class Player : MonoBehaviour
         }
         if (rb.velocity.y == 0 && Move > 0 || rb.velocity.y == 0 && Move < 0)
         {
-            animator.SetBool("isRun", true); animator.SetBool("ak", false);
+            animator.SetBool("Chay", true); animator.SetBool("ak", false);
         }
         if (Move == 0 && rb.velocity.y == 0)
         {
-            animator.SetBool("isRun", false);
+            animator.SetBool("Chay", false);
 
-            animator.SetBool("2Jump", false);
+            animator.SetBool("Chay", false);
         }
         if (rb.velocity.y == 0)
         {
-            animator.SetBool("2Jump", false);
+            animator.SetBool("Chay", false);
             animator.SetBool("falling", false);
 
         }
