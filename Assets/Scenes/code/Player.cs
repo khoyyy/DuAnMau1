@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, nen);
         var Move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(Move * movespeed, rb.velocity.y);
-        if (Input.GetKeyDown(KeyCode.W) && canjump)
+        if (Input.GetKeyDown(KeyCode.Space) && canjump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
             animator.SetBool("2Jump", true);
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         }
         if (rb.velocity.y == 0)
         {
-            animaadadadtor.SetBool("2Jump", false);
+            animator.SetBool("2Jump", false);
             animator.SetBool("falling", false);
 
         }
