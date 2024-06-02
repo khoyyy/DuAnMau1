@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     public Transform _canjump;
-    public LayerMask Dat;
+    public LayerMask nen;
     private bool canjump;
     //private bool doublejump;
     private bool _flip;
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     }
     private void Move()
     {
-        canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, Dat);
+        canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, nen);
         var Move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(Move * movespeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && canjump)
