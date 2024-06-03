@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Playermoveming : MonoBehaviour
 {
@@ -29,26 +28,26 @@ public class Playermoveming : MonoBehaviour
         Run();
         FlipSprite();
     }
-    private void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-        Debug.Log(">>>>> Move Input:" + moveInput);
-        // moveInput
-        //(1,0) -> Right
-        //(-1,0) -> Left
-        //(0,1) -> Up
-        //(0,-1) -> Down
-    }
-    void OnJump(InputValue value)
-    {
-        var isTouchingGround = _capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
-        if (!isTouchingGround) return;
-        if (value.isPressed)
-        {
-            Debug.Log(">>>>> Jump");
-            _rigidbody2d.velocity += new Vector2(0, jumpSpeed);
-        }
-    }
+    //private void OnMove(InputValue value)
+    //{
+    //    moveInput = value.Get<Vector2>();
+    //    Debug.Log(">>>>> Move Input:" + moveInput);
+    //    // moveInput
+    //    //(1,0) -> Right
+    //    //(-1,0) -> Left
+    //    //(0,1) -> Up
+    //    //(0,-1) -> Down
+    //}
+    //void OnJump(InputValue value)
+    //{
+    //    var isTouchingGround = _capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    //    if (!isTouchingGround) return;
+    //    if (value.isPressed)
+    //    {
+    //        Debug.Log(">>>>> Jump");
+    //        _rigidbody2d.velocity += new Vector2(0, jumpSpeed);
+    //    }
+    //}
 
     // điều khiển chuyển động của nhân vật 
     void Run()
