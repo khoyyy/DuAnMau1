@@ -69,22 +69,22 @@ public class Player : MonoBehaviour
         capsule2D = GetComponent<CapsuleCollider2D>();
         AudioSource = GetComponent<AudioSource>();
         //hiển thị điểm 
-        ScoreText.text = score.ToString();
+        //ScoreText.text = score.ToString();
 
         //Xóa 1 mạng bằng hình
-        for (int i = 0; i < 3; i++)
-        {
-            if (i < lives)
-            {
-                _liveImages[i].SetActive(true);
-            }
-            else
-            {
-                _liveImages[i].SetActive(false);
-            }
-        }
-        //gán giá trị mặc định cho thgian
-        _timeText.text = $"{_time:0.00}";
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    if (i < lives)
+        //    {
+        //        _liveImages[i].SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        _liveImages[i].SetActive(false);
+        //    }
+        //}
+        ////gán giá trị mặc định cho thgian
+        //_timeText.text = $"{_time:0.00}";
 
     }
 
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         Flip();
         Animator();
         File();
-        Times();
+        //Times();
     }
     public void Times()//thời gian chơi
     {
@@ -213,7 +213,7 @@ public class Player : MonoBehaviour
         {
             var climninput = Input.GetAxis("Vertical");
             rb.velocity = new Vector2(rb.velocity.x, climninput * _moveClimb);
-            at.SetFloat("isClimbing", Mathf.Abs(climninput));
+            at.SetFloat("Leo", Mathf.Abs(climninput));
         }
     }
     //xử lý va chạm exit
@@ -233,7 +233,7 @@ public class Player : MonoBehaviour
 
     public void Animator()
     {
-        at.SetFloat("isRun", Mathf.Abs(Horizontal));
+        at.SetFloat("Chay", Mathf.Abs(Horizontal));
 
 
     }
