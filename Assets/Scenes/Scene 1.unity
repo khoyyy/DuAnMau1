@@ -7071,7 +7071,6 @@ GameObject:
   - component: {fileID: 1365277843}
   - component: {fileID: 1365277842}
   - component: {fileID: 1365277844}
-  - component: {fileID: 1365277846}
   m_Layer: 6
   m_Name: dat
   m_TagString: Dat
@@ -9147,33 +9146,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!50 &1365277846
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365277840}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1413625034
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,18 +9330,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62b94e5538fff04089904d1cb14e96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 10
-  movespeed: 5
-  jumpspeed: 6
-  climSpeed: 5
-  _canjump: {fileID: 521417139}
-  nen:
-    serializedVersion: 2
-    m_Bits: 64
-  down: 0
+  _moveSpeed: 1
+  _moveJump: 5
+  _moveTop: 7
+  _moveSlime: 15
+  _moveClimb: 1
+  _okJump: 0
+  _okClimbing: 0
   bulletPrefab: {fileID: 0}
-  guntransform: {fileID: 0}
+  gunTransform: {fileID: 0}
+  coinCollectSXF: {fileID: 0}
+  enemySXF: {fileID: 0}
+  ScoreText: {fileID: 0}
+  _timeText: {fileID: 0}
+  _liveImages: []
+  _gameOverPanel: {fileID: 0}
 --- !u!1001 &1505312245
 PrefabInstance:
   m_ObjectHideFlags: 0
