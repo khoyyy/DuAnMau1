@@ -165,11 +165,7 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * _moveTop, ForceMode2D.Impulse);//đạp quái r nhảy
             at.SetTrigger("isJump");//đạp quái animator 
         }
-        else if (other.gameObject.CompareTag("slimeJump"))
-        {
-            rb.AddForce(Vector2.up * _moveSlime, ForceMode2D.Impulse);//đạp slime r nhảy
-
-        }
+        
         else if (other.gameObject.tag == "Climbing")//chạm thang true
         {
             _okClimbing = true;
