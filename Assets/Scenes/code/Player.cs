@@ -13,18 +13,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _moveSpeed = 1f;//cho vận tốc di chuyển 
     [SerializeField] private float _moveJump = 5f;//vận tốc nhảy
-    [SerializeField] private float _moveTop = 7f;//vận tốc đạp đầu quái nhảy
-    [SerializeField] private float _moveSlime = 15f;//vận tốc đạp slime nhảy
-    [SerializeField] private float _moveClimb = 1f; //vận tốc leo thang
-
+   
     //Khai bao nằm ngang và flip(xoay)
     private float Horizontal;
     //đạn bay theo hướng nhân vật
     private bool right = true;
     //nhảy bool
     [SerializeField] private bool _okJump;
-    //thang bool
-    [SerializeField] private bool _okClimbing;
     //tham chiếu đạn
     public GameObject bulletPrefab;
     //tham Chiếu tới vị trí súng
@@ -50,7 +45,7 @@ public class Player : MonoBehaviour
 
     ////tham chiếu đến thời gian
     [SerializeField] private TextMeshProUGUI _timeText;
-    private static float _time = 0;
+    //private static float _time = 0;
 
     //khai báo biến quản lí số nhân vật
     [SerializeField] private static int lives = 3;
@@ -68,22 +63,22 @@ public class Player : MonoBehaviour
         at = GetComponent<Animator>();
         capsule2D = GetComponent<CapsuleCollider2D>();
         AudioSource = GetComponent<AudioSource>();
-        //hiển thị điểm 
-        //ScoreText.text = score.ToString();
+        //hiển thị điểm
+        ScoreText.text = score.ToString();
 
         //Xóa 1 mạng bằng hình
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    if (i < lives)
-        //    {
-        //        _liveImages[i].SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        _liveImages[i].SetActive(false);
-        //    }
-        //}
-        ////gán giá trị mặc định cho thgian
+        for (int i = 0; i < 3; i++)
+        {
+            if (i < lives)
+            {
+                _liveImages[i].SetActive(true);
+            }
+            else
+            {
+                _liveImages[i].SetActive(false);
+            }
+        }
+        //gán giá trị mặc định cho thgian
         //_timeText.text = $"{_time:0.00}";
 
     }
@@ -97,13 +92,7 @@ public class Player : MonoBehaviour
         File();
         //Times();
     }
-    public void Times()//thời gian chơi
-    {
-        //time
-        _time += Time.deltaTime;
-        _timeText.text = $"Time: {_time:0.00}";
-
-    }
+    
     public void Move()
     {
         Horizontal = Input.GetAxis("Horizontal");
@@ -121,8 +110,7 @@ public class Player : MonoBehaviour
         //nếu nhấn f thì bắn 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //animator
-            at.SetTrigger("isFile");
+            
 
             //tạo ra viên đạn tại vị trí súng
             var oneBullet = Instantiate(bulletPrefab, gunTransform.position, Quaternion.identity);
@@ -157,21 +145,11 @@ public class Player : MonoBehaviour
             score += 10;
             ScoreText.text = score.ToString();
         }
-        else if (other.gameObject.CompareTag("EnemyTopSide"))//dap dau
-        {
-            //lm mat oc
-            Destroy(other.gameObject.transform.parent.gameObject);
-            AudioSource.PlayOneShot(enemySXF);//Phát nhạc
-            rb.AddForce(Vector2.up * _moveTop, ForceMode2D.Impulse);//đạp quái r nhảy
-            at.SetTrigger("isJump");//đạp quái animator 
-        }
+       
         
-        else if (other.gameObject.tag == "Climbing")//chạm thang true
-        {
-            _okClimbing = true;
-            rb.gravityScale = 0f;
-        }
-        else if (other.gameObject.CompareTag("Quai") || other.gameObject.tag == "Trap")
+        
+        else if (other.gameObject.CompareTag("Quai") 
+            )
         {
             //Mất 1 mạng, reload màn chs
             lives -= 1;
@@ -203,27 +181,13 @@ public class Player : MonoBehaviour
 
     }
 
-    private void FixedUpdate()//thang
-    {
-        if (_okClimbing)
-        {
-            var climninput = Input.GetAxis("Vertical");
-            rb.velocity = new Vector2(rb.velocity.x, climninput * _moveClimb);
-            at.SetFloat("Leo", Mathf.Abs(climninput));
-        }
-    }
+    
     //xử lý va chạm exit
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Dat")
         {
             _okJump = false;
-        }
-        else
-        if (other.gameObject.tag == "Climbing")//chạm thang false
-        {
-            _okClimbing = false;
-            rb.gravityScale = 2f;
         }
     }
 
