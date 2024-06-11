@@ -299,9 +299,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1707941540}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1701,7 +1701,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.61, y: 1.54, z: -10}
+  m_LocalPosition: {x: 3.108, y: 1.114, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2355,9 +2355,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 746003792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6d8bef167928d448b9108f2224fc3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d911bf742440a445b33304488a5f706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadingCanvas: {fileID: 160707446}
+  _loadingSlider: {fileID: 36575681}
+  _loadingText: {fileID: 960245464}
 --- !u!1 &760215984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9527,7 +9530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.81761, g: 0.640204, b: 0.640204, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11988,7 +11991,7 @@ Transform:
   m_GameObject: {fileID: 1413625034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.61, y: 1.54, z: 0}
+  m_LocalPosition: {x: 3.108, y: 1.114, z: 0}
   m_LocalScale: {x: 1.5101771, y: 1.1690452, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

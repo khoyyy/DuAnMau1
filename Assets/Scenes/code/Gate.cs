@@ -36,13 +36,13 @@ public class Gate : MonoBehaviour
             value++;
             _loadingSlider.value = value;
             _loadingText.text = value + "%";
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.05f);
             if (value >= 100)
             {
                 break;
             }
         }
         //chuyển sang scene2 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }
