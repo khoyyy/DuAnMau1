@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
-    using System.IO;
-    using UnityEngine;
-    internal class StorageManager
+    public class StorageManager
     {
         public static bool SaveToFile(string filename, string json)
         {

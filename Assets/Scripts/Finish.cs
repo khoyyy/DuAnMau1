@@ -50,8 +50,8 @@ public class Finish : MonoBehaviour
             {
                 var rowInstance = Instantiate(row, row.transform.parent);
                 rowInstance.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text =(i+1).ToString();
-                rowInstance.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = played.plays[i].score.ToString();
-                rowInstance.transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = played.plays[i].timePlayed;
+                rowInstance.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = plays[i].score.ToString();
+                rowInstance.transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = plays[i].timePlayed;
                 rowInstance.SetActive(true);
             }
             // hiển thị giao diện kết thúc 
