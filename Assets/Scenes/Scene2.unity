@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &37088430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3571,7 +3571,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.266179, y: 2.8295906, z: -9.910494}
+  m_LocalPosition: {x: 4.266425, y: 3.4080656, z: -9.910494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4244,7 +4244,7 @@ Transform:
   m_GameObject: {fileID: 741984066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.322196, y: 2.8270113, z: -9.910494}
+  m_LocalPosition: {x: 6.742196, y: 3.4070113, z: -9.910494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4601,7 +4601,7 @@ Transform:
   m_GameObject: {fileID: 775312420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.322196, y: 2.8270113, z: -9.910494}
+  m_LocalPosition: {x: 6.742196, y: 3.4070113, z: -9.910494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19259,7 +19259,7 @@ Transform:
   m_GameObject: {fileID: 2015712784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.322196, y: 2.8270113, z: -9.910494}
+  m_LocalPosition: {x: 6.742196, y: 3.4070113, z: -9.910494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19557,7 +19557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200012852991636345, guid: 97df31ee5f320394885d956fe322e41b, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5200012852991636345, guid: 97df31ee5f320394885d956fe322e41b, type: 3}
       propertyPath: m_SortingLayerID
@@ -19565,11 +19565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622321647286207419, guid: 97df31ee5f320394885d956fe322e41b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.04
+      value: 10.46
       objectReference: {fileID: 0}
     - target: {fileID: 5622321647286207419, guid: 97df31ee5f320394885d956fe322e41b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.78
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5622321647286207419, guid: 97df31ee5f320394885d956fe322e41b, type: 3}
       propertyPath: m_LocalPosition.z
